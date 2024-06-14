@@ -1,0 +1,39 @@
+<%-include("navbar.ejs")%>
+<form action="/admin/update_company_info" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="company_info_id" value="<%=company_info[0].company_info_id%>">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Edit Company Info</h2>
+            </div>
+            <div class="col-md-8">
+                <label>Enter Menu Button1 </label>
+                <input type="text" name="menu_button1" class="form-control" value="<%=company_info[0].menu_button1%>">
+                <label>Enter Menu Button2 </label>
+                <input type="text" name="menu_button2" class="form-control" value="<%=company_info[0].menu_button2%>">
+                <label>Enter Footer Description </label>
+                <textarea name="footer_description" class="form-control">value="<%=company_info[0].footer_description%>"</textarea>
+                <label>Enter Footer Address </label>
+                <input type="text" name="footer_address" class="form-control" value="<%=company_info[0].footer_address%>">
+                <label>Enter Footer Phone </label>
+                <input type="text" name="footer_phone" class="form-control" value="<%=company_info[0].footer_phone%>">
+                <label>Enter Footer Phone 2 </label>
+                <input type="text" name="footer_email" class="form-control" value="<%=company_info[0].footer_email%>">
+                <label>Enter Footer Map</label>
+                <input type="text" name="footer_map" class="form-control" value="<%=company_info[0].footer_map%>">
+                <label>Logo 1</label>
+                <input type="file" name="logo1" class="form-control" value="<%=company_info[0].logo1%>">
+                <label>Logo 2</label>
+                <input type="file" name="logo2" class="form-control" value="<%=company_info[0].logo2%>">
+
+                
+    
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3 mb-3">Update Company Info</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%-include("footer.ejs")%>

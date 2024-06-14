@@ -1,0 +1,27 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/update_contactus" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="contactus_id" value="<%=contactus_info[0].contactus_id%>">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Manage Slider</h2>
+            </div>
+            <div class="col-md-8">
+                <label>CONTACTUS ICON</label>
+                <input type="text" name="contactus_icon" class="form-control" value="<%=contactus_info[0].contactus_icon%>">
+                <label>CONTACTUS TITLE</label>
+                <input type="text" name="contactus_title" class="form-control" value="<%=contactus_info[0].contactus_title%>">
+                <label>CONTACTUS SUB TITLE</label>
+                <input type="text" name="contactus_sub" class="form-control" value="<%=contactus_info[0].contactus_sub%>">
+                
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3 mb-3">Update CONTACTUS </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%-include("footer.ejs")%>

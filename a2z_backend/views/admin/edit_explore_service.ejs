@@ -1,0 +1,27 @@
+<%-include('navbar.ejs')%>
+
+<form action="/admin/update_explore_service" method="post" enctype="multipart/form-data">    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Update Explore Service</h3>
+        </div>
+        <div class="row">
+            <input type="hidden" name="service_explore_id" value="<%=expore_edit_data.service_explore_id%>" class="form-control">
+            <div class="col-md-6 mt-3">
+                Enter Service Icon  
+                <input type="text" name="exppre_service_logo" value="<%=expore_edit_data.exppre_service_logo%>" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Service Details 
+                <input type="text" name="exppre_service_details" value="<%=expore_edit_data.exppre_service_details%>" class="form-control">
+            </div>
+            
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Update Service</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%-include('footer.ejs')%>

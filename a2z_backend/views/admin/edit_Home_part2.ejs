@@ -1,0 +1,73 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/update_Home_part2" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="part2_id" value="<%=Home_part2_info[0].part2_id%>">
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Edit Home Part 2</h2>
+            </div>
+            <div class="col-md-6 float-start">
+                <label>About Features Title</label>
+                <input type="text" name="feature_title" class="form-control" value="<%=Home_part2_info[0].feature_title%>">
+                <label>Features Name1</label>
+                <input type="text" name="feature_name1" class="form-control" value="<%=Home_part2_info[0].feature_name1%>">
+                <label>Features Image1</label>
+                <input type="file" name="feature_img1" class="form-control" value="<%=Home_part2_info[0].feature_img1%>">
+                <label>Features Name2</label>
+                <input type="text" name="feature_name2" class="form-control" value="<%=Home_part2_info[0].feature_name2%>">
+                <label>Features Image2</label>
+                <input type="file" name="feature_img2" class="form-control" value="<%=Home_part2_info[0].feature_img2%>">
+                <label>Features Name3</label>
+                <input type="text" name="feature_name3" class="form-control" value="<%=Home_part2_info[0].feature_name3%>">
+                <label>Features Image3</label>
+                <input type="file" name="feature_img3" class="form-control" value="<%=Home_part2_info[0].feature_img3%>">
+                <label>Features Name4</label>
+                <input type="text" name="feature_name4" class="form-control" value="<%=Home_part2_info[0].feature_name4%>">
+                <label>Features Image4</label>
+                <input type="file" name="feature_img4" class="form-control" value="<%=Home_part2_info[0].feature_img4%>">
+                <label>Features Name5</label>
+                <input type="text" name="feature_name5" class="form-control" value="<%=Home_part2_info[0].feature_name5%>">
+                <label>Features Image5</label>
+                <input type="file" name="feature_img5" class="form-control" value="<%=Home_part2_info[0].feature_img5%>">
+                <label>Features Name6</label>
+                <input type="text" name="feature_name6" class="form-control" value="<%=Home_part2_info[0].feature_name6%>">
+                <label>Features Image6</label>
+                <input type="file" name="feature_img6" class="form-control" value="<%=Home_part2_info[0].feature_img6%>">
+                 
+                </div>
+                <div class="col-md-6 float-start">
+                <label>Program Title</label>
+                <input type="text" name="program_title" class="form-control" value="<%=Home_part2_info[0].program_title%>">
+                <label>Program Name1</label>
+                <input type="text" name="program_name1" class="form-control" value="<%=Home_part2_info[0].program_name1%>">
+                <label>Program Info1</label>
+                <input type="text" name="program_info1" class="form-control" value="<%=Home_part2_info[0].program_info1%>">
+                <label>Program Icon1</label>
+                <input type="text" name="program_icon1" class="form-control" value="<%=Home_part2_info[0].program_icon1%>">
+                <label>Program Name2</label>
+                <input type="text" name="program_name2" class="form-control" value="<%=Home_part2_info[0].program_name2%>">
+                <label>Program Info2</label>
+                <input type="text" name="program_info2" class="form-control" value="<%=Home_part2_info[0].program_info2%>">
+                <label>Program Icon2</label>
+                <input type="text" name="program_icon2" class="form-control" value="<%=Home_part2_info[0].program_icon2%>">
+                <label>Program Name3</label>
+                <input type="text" name="program_name3" class="form-control" value="<%=Home_part2_info[0].program_name3%>">
+                <label>Program Info3</label>
+                <input type="text" name="program_info3" class="form-control" value="<%=Home_part2_info[0].program_info3%>">
+                <label>Program Icon3</label>
+                <input type="text" name="program_icon3" class="form-control" value="<%=Home_part2_info[0].program_icon3%>">
+    
+
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary mt-3 mb-3">Update Home Part 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    
+
+
+<%-include("footer.ejs")%>

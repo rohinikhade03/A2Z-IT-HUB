@@ -1,0 +1,42 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/update_home_part1" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="part1_id" value="<%=Home_part1_info[0].part1_id%>">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Edit Home Part 1</h2>
+            </div>
+            <div class="col-md-8">
+                <label>About Us Title</label>
+                <input type="text" name="aboutus_title" class="form-control" value="<%=Home_part1_info[0].aboutus_title%>">
+                <label>About Us Sub Title</label>
+                <input type="text" name="aboutus_sub_title" class="form-control" value="<%=Home_part1_info[0].aboutus_sub_title%>">
+                <label>About Us Description</label>
+                <input type="text" name="aboutus_description" class="form-control" value="<%=Home_part1_info[0].aboutus_description%>">
+                <label>Vision Title</label>
+                <input type="text" name="vision_title" class="form-control" value="<%=Home_part1_info[0].vision_title%>">
+                <label>Vision Description</label>
+                <input type="text" name="vision_description" class="form-control" value="<%=Home_part1_info[0].vision_description%>">
+                <label>Mission Title</label>
+                <input type="text" name="mission_title" class="form-control" value="<%=Home_part1_info[0].mission_title%>">
+                <label>Mission Description</label>
+                <input type="text" name="mission_description" class="form-control" value="<%=Home_part1_info[0].mission_description%>">
+                <label>Mission Description list1</label>
+                <input type="text" name="mission_description1" class="form-control" value="<%=Home_part1_info[0].mission_description1%>">
+                <label>Mission Description list2</label>
+                <input type="text" name="mission_description2" class="form-control" value="<%=Home_part1_info[0].mission_description2%>">
+                <label>Mission Description list3</label>
+                <input type="text" name="mission_description3" class="form-control" value="<%=Home_part1_info[0].mission_description3%>">
+                <label>Mission Image</label>
+                <input type="file" name="mission_img" class="form-control" value="<%=Home_part1_info[0].mission_img%>">
+   
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary mt-3 mb-3">Update Home Part 1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%-include("footer.ejs")%>

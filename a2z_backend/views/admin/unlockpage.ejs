@@ -1,0 +1,57 @@
+<%-include('navbar.ejs')%>
+
+
+<!-- <form action="/admin/save_unloack" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Add Unlock service</h3>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-12 mt-3">
+                Enter Heading  
+                <input type="text" name="unlock_heading" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Image  
+                <input type="file" name="unlock_images"  class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                
+            </div>
+
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Update Service unlock</button>
+            </div>
+        </div>
+    </div>
+</form> -->
+<form action="/admin/edit_unloack" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Add Unlock service</h3>
+        </div>
+        <div class="row">
+            <input type="hidden" name="service_unlock_id" value="<%=unlock_edit_data.service_unlock_id%>">
+            <div class="col-md-12 mt-3">
+                Enter Heading  
+                <input type="text" name="unlock_heading" value="<%=unlock_edit_data.unlock_heading%>" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Image  
+                <input type="file" name="unlock_images" value="<%=unlock_edit_data.unlock_images%>" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                <img src="/uploads/<%=unlock_edit_data.unlock_images%>" width="200px">
+            </div>
+
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Update Service unlock</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%-include('footer.ejs')%>

@@ -1,0 +1,27 @@
+<%-include('navbar.ejs')%>
+
+<form action="/admin/update_company" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Update Company</h3>
+        </div>
+        <div class="row">
+            <input type="hidden" name="company_id" value="<%=company_edit_data.company_id%>">
+            <div class="col-md-6 mt-3">
+                Enter Company Image  
+                <input type="file" name="company_images" value="<%=company_edit_data.company_images%>" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                <img src="/uploads/<%=company_edit_data.company_images%>" width="150px">
+            </div>
+
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Update Company</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%-include('footer.ejs')%>

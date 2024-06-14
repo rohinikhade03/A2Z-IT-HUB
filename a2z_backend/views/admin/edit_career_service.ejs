@@ -1,0 +1,36 @@
+<%- include('navbar.ejs')%>
+
+<form action="/admin/update_carrer_service" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Update Career Service</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <input type="hidden" name="" value="<%=edit_carrer_service_data.career_services_id%>">
+                Enter Service Logo  
+                <input type="text" name="career_service_logo" value="<%=edit_carrer_service_data.career_service_logo%>" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Service Details 
+                <input type="text" name="career_service_details" value="<%=edit_carrer_service_data.career_service_details%>" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Service Icon 
+                <input type="text" name="service_icon" class="form-control" value="<%=edit_carrer_service_data.service_icon%>">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Service Title 
+                <input type="text" name="service_title" class="form-control" value="<%=edit_carrer_service_data.service_title%>">
+            </div>
+            
+
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Update Service</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%- include('footer.ejs')%>

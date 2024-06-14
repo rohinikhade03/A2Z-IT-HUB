@@ -1,0 +1,71 @@
+<%-include('navbar.ejs')%>
+
+<form action="/admin/save_landmark_service" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Add Landmark Service</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                Enter Heading 
+                <input type="text" name="service_landmark_heading" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter titel
+                <input type="text" name="service_landmark_title" class="form-control">
+            </div>
+            <div class="col-md-12 mt-3">
+                Enter Details 
+                <input type="text" name="service_landmark_details" class="form-control">
+            </div>
+            
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Save Service</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<br><br>
+
+
+<div class="container bg-white p-3">
+    <div class="row">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>List Service Landmark</h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-border">
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>SNO</th>
+                    <th>Heading</th>
+                    <th>Title</th>
+                    <th>Details</th>
+                </tr>
+                <% for(var i=0;i<service_landmark_data.length;i++) { %>
+                    <tr>
+                        <td>
+                            <a style="text-decoration: none;" href="/admin/edit_service_landmark/<%=service_landmark_data[i].service_landmark_id%>"> 
+                                <button class="btn btn-primary p-0 pe-2 pt-1 pb-1 ps-2"> <i class="fas fa-pencil"></i> </button>
+                            </a>
+                        </td>
+                        <td>
+                            <a style="text-decoration: none;" href="/admin/delete_service_landmark/<%=service_landmark_data[i].service_landmark_id%>"> 
+                                <button class="btn btn-danger p-0 pe-2 pt-1 pb-1 ps-2"> <i class="fas fa-trash text-white"></i> </button> 
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=service_landmark_data[i].service_landmark_heading%></td>
+                        <td><%=service_landmark_data[i].service_landmark_title%></td>
+                        <td><%=service_landmark_data[i].service_landmark_details%></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%-include('footer.ejs')%>

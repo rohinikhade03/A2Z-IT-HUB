@@ -1,0 +1,93 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/save_Home_part1" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading  col-md-12">
+                <h2>Mange Home Part 1</h2>
+            </div>
+            <div class="col-md-8">
+                <label>About Us Title</label>
+                <input type="text" name="aboutus_title" class="form-control">
+                <label>About Us Sub Title</label>
+                <input type="text" name="aboutus_sub_title" class="form-control">
+                <label>About Us Description</label>
+                <input type="text" name="aboutus_description" class="form-control">
+                <label>Vision Title</label>
+                <input type="text" name="vision_title" class="form-control">
+                <label>Vision Description</label>
+                <input type="text" name="vision_description" class="form-control">
+                <label>Mission Title</label>
+                <input type="text" name="mission_title" class="form-control">
+                <label>Mission Description</label>
+                <input type="text" name="mission_description" class="form-control">
+                <label>Mission Description list1</label>
+                <input type="text" name="mission_description1" class="form-control">
+                <label>Mission Description list2</label>
+                <input type="text" name="mission_description2" class="form-control">
+                <label>Mission Description list3</label>
+                <input type="text" name="mission_description3" class="form-control">
+                <label>Mission Image</label>
+                <input type="file" name="mission_img" class="form-control">
+   
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-primary mt-3 mb-3">Save Home Part 1</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Table -->
+<div class="container-fluid bg-white p-4 shadow">
+    <div class="row">
+        <div class="subheading col-md-12 text-white">
+            <h2>List of Manage Home Part 1</h2>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover w-100">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>TITLE</th>
+                    <th>SUB TITLE</th>
+                    <th>ABOUT DESCRIPTION</th>
+                    <th>VISION TITLE</th>
+                    <th>VISION DESCRIPTION</th>
+                    <th>MISSION TITLE</th>
+                    <th>MISSION DESCRIPTION</th>
+                    <th>MISSION DESCRIPTION LIST1</th>
+                    <th>MISSION DESCRIPTION LIST2</th>
+                    <th>MISSION DESCRIPTION LIST3</th>
+                </tr>
+                <% for(var i=0;i<home_part1_list.length;i++){%>
+                    <tr>
+                        <td style="width: 3%; white-space: nowrap;">
+                            
+                            <a href="/admin/edit_home_part1/<%=home_part1_list[i].part1_id%>"><button class="bg-info"><i class="fa fa-edit text-white"></i></button></a>
+                            <a href="/admin/delete_home_part1/<%=home_part1_list[i].part1_id%>" onclick="return confirm('ARE YOU SURE...?')"><button class="bg-danger"><i class="fa fa-trash text-white"></i></button></a>
+
+                        </td>
+
+                        <td><%=i+1%></td>
+                        <td><%=home_part1_list[i].aboutus_title%></td>
+                        <td><%=home_part1_list[i].aboutus_sub_title%></td>
+                        <td><%=home_part1_list[i].aboutus_description%></td>
+                        <td><%=home_part1_list[i].vision_title%></td>
+                        <td><%=home_part1_list[i].vision_description%></td>
+                        <td><%=home_part1_list[i].mission_title%></td>
+                        <td><%=home_part1_list[i].mission_description%></td>
+                        <td><%=home_part1_list[i].mission_description1%></td>
+                        <td><%=home_part1_list[i].mission_description2%></td>
+                        <td><%=home_part1_list[i].mission_description3%></td>
+                        <td>
+                            <img src="/uploads/home_part1/<%=home_part1_list[i].mission_img%>" width="100px" height="100px" alt="mission_img">
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%-include("footer.ejs")%>

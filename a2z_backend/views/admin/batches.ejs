@@ -1,0 +1,75 @@
+<%- include('navbar.ejs') %>
+
+<form action="/admin/save_batch" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Add Batch</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                Enter Cource Name 
+                <input type="text" name="batch_cource_name" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Cource Duration 
+                <input type="text" name="cource_duration" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Cource Time 
+                <input type="time" name="cource_time" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Cource Date
+                <input type="date" name="cource_date" class="form-control">
+            </div>
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Save Cource</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<br><br>
+
+
+<div class="container bg-white p-3">
+    <div class="row">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>List Batches</h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-border">
+                <tr>
+                    <th></th>
+                    <th>SNO</th>
+                    <th>Cource Name</th>
+                    <th>Cource Duration</th>
+                    <th>Cource Time</th>
+                    <th>Cource Date</th>
+                </tr>
+                <% for(var i=0;i<batch_cource_data.length;i++) { %>
+                    <tr>
+                        <td>
+                            <a style="text-decoration: none;" href="/admin/edit_batch_cource/<%=batch_cource_data[i].batch_cource_id%>"> 
+                                <button class="btn btn-primary p-0 pe-2 pt-1 pb-1 ps-2"> <i class="fas fa-pencil"></i> </button>
+                            </a>
+                            <a style="text-decoration: none;" href="/admin/delete_batch_cource/<%=batch_cource_data[i].batch_cource_id%>"> 
+                                <button class="btn btn-danger p-0 pe-2 pt-1 pb-1 ps-2"> <i class="fas fa-trash text-white"></i> </button> 
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=batch_cource_data[i].batch_cource_name%></td>
+                        <td><%=batch_cource_data[i].cource_duration%></td>
+                        <td><%=batch_cource_data[i].cource_time%></td>
+                        <td><%=batch_cource_data[i].cource_date%></td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('footer.ejs') %>

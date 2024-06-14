@@ -1,0 +1,63 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/save_contactus" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Manage Slider</h2>
+            </div>
+            <div class="col-md-8">
+                <label>CONTACTUS ICON</label>
+                <input type="text" name="contactus_icon" class="form-control">
+                <label>CONTACTUS TITLE</label>
+                <input type="text" name="contactus_title" class="form-control">
+                <label>CONTACTUS SUB TITLE</label>
+                <input type="text" name="contactus_sub" class="form-control">
+                
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3 mb-3">Save CONTACTUS </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Table -->
+<div class="container-fluid bg-white p-4 shadow">
+    <div class="row">
+        <div class="subheading col-md-12 text-white">
+            <h2>List of ContactUs</h2>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>CONTACTUS ICON</th>
+                    <th>CONTACTUS TITLE</th>
+                    <th>CONTACTUS SUB TITLE</th>
+                    
+                </tr>
+                <% for(var i=0;i<contactus_list.length;i++) { %>
+                    <tr>
+                        <td style="width: 3%; white-space: nowrap;">
+                            
+                            <a href="/admin/edit_contactus/<%=contactus_list[i].contactus_id%>"><button class="bg-info"><i class="fa fa-edit text-white"></i></button></a>
+                            <a href="/admin/delete_contactus/<%=contactus_list[i].contactus_id%>" onclick="return confirm('ARE YOU SURE...?')"><button class="bg-danger"><i class="fa fa-trash text-white"></i></button></a>
+
+                        </td>
+                        <td><%=i+1%></td>
+                        <td><%=contactus_list[i].contactus_icon%></td>
+                        <td><%=contactus_list[i].contactus_title%></td>
+                        <td><%=contactus_list[i].contactus_sub%></td>
+                        
+                    </tr>
+
+                    <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<%-include("footer.ejs")%>

@@ -1,0 +1,29 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/update_slider" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="slider_id" value="<%=slider_info[0].slider_id%>">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Edit Slider</h2>
+            </div>
+            <div class="col-md-8">
+                <label>Slider Title</label>
+                <input type="text" name="slider_title" class="form-control" value="<%=slider_info[0].slider_title%>">
+                <label>Slider Info</label>
+                <input type="text" name="slider_info" class="form-control" value="<%=slider_info[0].slider_info%>">
+                <label>Slider Button</label>
+                <input type="text" name="slider_btn" class="form-control" value="<%=slider_info[0].slider_btn%>">
+                <label>Slider Button URL</label>
+                <input type="text" name="slider_btn_url" class="form-control" value="<%=slider_info[0].slider_btn_url%>">
+                <label>Slider Image</label>
+                <input type="text" name="slider_img" class="form-control" value="<%=slider_info[0].slider_img%>">
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3 mb-3">Update Silder </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%-include("footer.ejs")%>

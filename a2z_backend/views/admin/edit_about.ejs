@@ -1,0 +1,39 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/update_about" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="about_id" value="<%=about_info[0].about_id%>">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Edit About Us</h2>
+            </div>
+            <div class="col-md-8">
+                <label>What we do Title</label>
+                <input type="text" name="wdwd_title" class="form-control" value="<%=about_info[0].wdwd_title%>">
+                <label>What we do Description</label>
+                <input type="text" name="wdwd_description" class="form-control" value="<%=about_info[0].wdwd_description%>">
+                <label>What we do Icon</label>
+                <input type="text" name="wdwd_icon" class="form-control" value="<%=about_info[0].wdwd_icon%>">
+                <label>What we do Sub Title</label>
+                <input type="text" name="wdwd_sub_title" class="form-control" value="<%=about_info[0].wdwd_sub_title%>">
+                <label>What we do Info</label>
+                <input type="text" name="wdwd_info" class="form-control" value="<%=about_info[0].wdwd_info%>">
+            </div>
+            <div class="col-md-8">
+                <label>Core Values Title</label>
+                <input type="text" name="values_title" class="form-control" value="<%=about_info[0].values_title%>">
+                <label>Core Values Sub Title</label>
+                <input type="text" name="values_sub_title" class="form-control" value="<%=about_info[0].values_sub_title%>">
+                <label>Core Values Info</label>
+                <input type="text" name="values_info" class="form-control" value="<%=about_info[0].values_info%>">
+                <label>Core Values Image</label>
+                <input type="file" name="values_img" class="form-control" value="<%=about_info[0].values_img%>">
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3 mb-3">Update About </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<%-include("footer.ejs")%>

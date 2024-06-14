@@ -1,0 +1,59 @@
+<%-include('navbar.ejs')%>
+
+<form action="/admin/save_company" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Add Company</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                Enter Company Image  
+                <input type="file" name="company_images" class="form-control">
+            </div>
+
+            <div class="col-md-12 mt-3 text-center">
+                <button class="btn btn-primary">Save Company</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<br><br>
+
+
+<div class="container bg-white p-3">
+    <div class="row">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>List Career Service</h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-border">
+                <tr>
+                    <th></th>
+                    <th>SNO</th>
+                    <th>Company Image</th>
+                </tr>
+                <% for(var i=0;i<compnay_data.length;i++) { %>
+                    <tr>
+                        <td>
+                            <a style="text-decoration: none;" href="/admin/edit_company/<%=compnay_data[i].company_id%>"> 
+                                <button class="btn btn-primary p-0 pe-2 pt-1 pb-1 ps-2"> <i class="fas fa-pencil"></i> </button>
+                            </a>
+                            <a style="text-decoration: none;" href="/admin/delete_company/<%=compnay_data[i].company_id%>"> 
+                                <button class="btn btn-danger p-0 pe-2 pt-1 pb-1 ps-2"> <i class="fas fa-trash text-white"></i> </button> 
+                            </a>
+                        </td>
+                        <td><%=i+1%></td>
+                        <td>
+                            <img src="/uploads/<%=compnay_data[i].company_images.split(',')[0]%>" width="150px">
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%-include('footer.ejs')%>

@@ -1,0 +1,156 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/save_Home_part2" method="post" enctype="multipart/form-data">
+<div class="container-fluid">
+    <div class="row">
+        <div class="heading col-md-12">
+            <h2>Manage Home Part 2</h2>
+        </div>
+        <div class="col-md-6 float-start">
+            <label>About Features Title</label>
+            <input type="text" name="feature_title" class="form-control">
+            <label>Features Name1</label>
+            <input type="text" name="feature_name1" class="form-control">
+            <label>Features Image1</label>
+            <input type="file" name="feature_img1" class="form-control">
+            <label>Features Name2</label>
+            <input type="text" name="feature_name2" class="form-control">
+            <label>Features Image2</label>
+            <input type="file" name="feature_img2" class="form-control">
+            <label>Features Name3</label>
+            <input type="text" name="feature_name3" class="form-control">
+            <label>Features Image3</label>
+            <input type="file" name="feature_img3" class="form-control">
+            <label>Features Name4</label>
+            <input type="text" name="feature_name4" class="form-control">
+            <label>Features Image4</label>
+            <input type="file" name="feature_img4" class="form-control">
+            <label>Features Name5</label>
+            <input type="text" name="feature_name5" class="form-control">
+            <label>Features Image5</label>
+            <input type="file" name="feature_img5" class="form-control">
+            <label>Features Name6</label>
+            <input type="text" name="feature_name6" class="form-control">
+            <label>Features Image6</label>
+            <input type="file" name="feature_img6" class="form-control">
+             
+            </div>
+            <div class="col-md-6 float-start">
+            <label>Program Title</label>
+            <input type="text" name="program_title" class="form-control">
+            <label>Program Name1</label>
+            <input type="text" name="program_name1" class="form-control">
+            <label>Program Info1</label>
+            <input type="text" name="program_info1" class="form-control">
+            <label>Program Icon1</label>
+            <input type="text" name="program_icon1" class="form-control">
+            <label>Program Name2</label>
+            <input type="text" name="program_name2" class="form-control">
+            <label>Program Info2</label>
+            <input type="text" name="program_info2" class="form-control">
+            <label>Program Icon2</label>
+            <input type="text" name="program_icon2" class="form-control">
+            <label>Program Name3</label>
+            <input type="text" name="program_name3" class="form-control">
+            <label>Program Info3</label>
+            <input type="text" name="program_info3" class="form-control">
+            <label>Program Icon3</label>
+            <input type="text" name="program_icon3" class="form-control">
+
+
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3 mb-3">Save Home Part 2</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<!-- Table -->
+<div class="container-fluid bg-white p-4 shadow w-100">
+    <div class="row">
+        <div class="subheading col-md-12 text-white">
+            <h2>List of Manage Home Part 2</h2>
+        </div>
+        <div class="col-md-12 w-100 overflow-scroll">
+            <table class="table table-bordered table-hover w-100">
+                <tr>
+                    <th>Action</th>
+                    <th>SN</th>
+                    <th>About Feature Title</th>
+                    <th>Feature Name1</th>
+                    <th>Feature Image1</th>
+                    <th>Feature Name2</th>
+                    <th>Feature Image2</th>
+                    <th>Feature Name3</th>
+                    <th>Feature Image3</th>
+                    <th>Feature Name4</th>
+                    <th>Feature Image4</th>
+                    <th>Feature Name5</th>
+                    <th>Feature Image5</th>
+                    <th>Feature Name6</th>
+                    <th>Feature Image6</th>
+                    <th>Program Title</th>
+                    <th>Program Name1</th>
+                    <th>Program Info1</th>
+                    <th>Program Icon1</th>
+                    <th>Program Name2</th>
+                    <th>Program Info2</th>
+                    <th>Program Icon2</th>
+                    <th>Program Name3</th>
+                    <th>Program Info3</th>
+                    <th>Program Icon3</th>
+                </tr>
+                <% for(var i=0;i<home_part2_list.length;i++){%>
+                    <tr>
+                        <td style="width: 3%; white-space: nowrap;">
+                            
+                            <a href="/admin/edit_home_part2/<%=home_part2_list[i].part2_id%>"><button class="bg-info"><i class="fa fa-edit text-white"></i></button></a>
+                            <a href="/admin/delete_home_part2/<%=home_part2_list[i].part2_id%>" onclick="return confirm('ARE YOU SURE...?')"><button class="bg-danger"><i class="fa fa-trash text-white"></i></button></a>
+
+                        </td>
+
+                        <td><%=i+1%></td>
+                        <td><%=home_part2_list[i].feature_title%></td>
+                        <td><%=home_part2_list[i].feature_name1%></td>
+                        <td>
+                            <img src="/uploads/home_part2/<%=home_part2_list[i].feature_img1%>" width="30px" height="30px" alt="1">
+                        </td>
+                        <td><%=home_part2_list[i].feature_name2%></td>
+                        <td>
+                            <img src="/uploads/home_part2/<%=home_part2_list[i].feature_img2%>" width="30px" height="30px" alt="2">
+                        </td>
+                        <td><%=home_part2_list[i].feature_name3%></td>
+                        <td>
+                            <img src="/uploads/home_part2/<%=home_part2_list[i].feature_img3%>" width="30px" height="30px" alt="3">
+                        </td>
+                        <td><%=home_part2_list[i].feature_name4%></td>
+                        <td>
+                            <img src="/uploads/home_part2/<%=home_part2_list[i].feature_img4%>" width="30px" height="30px" alt="4">
+                        </td>
+                        <td><%=home_part2_list[i].feature_name5%></td>
+                        <td>
+                            <img src="/uploads/home_part2/<%=home_part2_list[i].feature_img5%>" width="30px" height="30px" alt="5">
+                        </td>
+                        <td><%=home_part2_list[i].feature_name6%></td>
+                        <td>
+                            <img src="/uploads/home_part2/<%=home_part2_list[i].feature_img6%>" width="30px" height="30px" alt="6">
+                        </td>
+                        <td><%=home_part2_list[i].program_title%></td>
+                        <td><%=home_part2_list[i].program_name1%></td>
+                        <td><%=home_part2_list[i].program_info1%></td>
+                        <td><%=home_part2_list[i].program_icon1%></td>
+                        <td><%=home_part2_list[i].program_name2%></td>
+                        <td><%=home_part2_list[i].program_info2%></td>
+                        <td><%=home_part2_list[i].program_icon2%></td>
+                        <td><%=home_part2_list[i].program_name3%></td>
+                        <td><%=home_part2_list[i].program_info3%></td>
+                        <td><%=home_part2_list[i].program_icon3%></td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%-include("footer.ejs")%>

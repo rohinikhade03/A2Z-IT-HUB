@@ -1,0 +1,32 @@
+<%-include('navbar.ejs')%>
+
+<form action="/admin/edit_app_service_page" method="post" enctype="multipart/form-data">
+    
+    <div class="container p-4 bg-white">
+        <div class="col-md-12 mb-2 text-center bg-dark p-2 text-white">
+            <h3>Add Application Services</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <input type="hidden" name="service_app_id" value="<%=app_service_data.service_app_id%>" >
+                Enter Heading  
+                <input type="text" name="app_heading" value="<%=app_service_data.app_heading%>" class="form-control">
+            </div>
+            <div class="col-md-6 mt-3">
+                Enter Image  
+                <input type="file" name="app_images"  value="<%=app_service_data.app_images%>" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+                <img src="/uploads/<%=app_service_data.app_images%>" alt="" class="mt-2" width="200px">
+            </div>
+
+            <div class="col-md-12 mt-3 text-center mt-3">
+                <button class="btn btn-primary">Update Service App</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<%-include('footer.ejs')%>

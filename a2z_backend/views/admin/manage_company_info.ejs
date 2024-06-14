@@ -1,0 +1,93 @@
+<%-include("navbar.ejs")%>
+
+<form action="/admin/save_company_info" method="post" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="heading col-md-12">
+                <h2>Manage Company Info</h2>
+            </div>
+            <div class="col-md-8">
+                <label>Enter Menu Button1 </label>
+                <input type="text" name="menu_button1" class="form-control">
+                <label>Enter Menu Button2 </label>
+                <input type="text" name="menu_button2" class="form-control">
+                <label>Enter Footer Description </label>
+                <textarea name="footer_description" class="form-control"></textarea>
+                <label>Enter Footer Address </label>
+                <input type="text" name="footer_address" class="form-control">
+                <label>Enter Footer Phone </label>
+                <input type="text" name="footer_phone" class="form-control">
+                <label>Enter Footer Email </label>
+                <input type="text" name="footer_email" class="form-control">
+                <label>Enter Footer Map</label>
+                <input type="text" name="footer_map" class="form-control">
+                <label>Logo 1</label>
+                <input type="file" name="logo1" class="form-control">
+                <label>Logo 2</label>
+                <input type="file" name="logo2" class="form-control">
+
+                
+    
+            </div>
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary mt-3 mb-3">Save Company Info</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Table -->
+<div class="container-fluid bg-white p-4 shadow">
+    <div class="row">
+        <div class="subheading col-md-12 text-white">
+            <h2>List of Company Info </h2>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>ACTION</th>
+                    <th>SN</th>
+                    <th>Menu Button1</th>
+                    <th>Menu Button2</th>
+                    <th>Footer Description</th>
+                    <th> Address</th>
+                    <th> Phone</th>
+                    <th> Email</th>
+                    <th>Map</th>
+                    <th>Logo 1</th>
+                    <th>Logo 2</th>
+                
+                </tr>
+                <% for(var i=0;i<company_info_list.length;i++){%>
+                        <tr>
+                            <td style="width: 3%; white-space: nowrap;">
+                            
+                                <a href="/admin/edit_company_info/<%=company_info_list[i].company_info_id%>"><button class="bg-info"><i class="fa fa-edit text-white"></i></button></a>
+                                <a href="/admin/delete_company_info/<%=company_info_list[i].company_info_id%>" onclick="return confirm('ARE YOU SURE...?')"><button class="bg-danger"><i class="fa fa-trash text-white"></i></button></a>
+
+                            </td>
+
+                            <td><%=i+1%></td>
+                            <td><%=company_info_list[i].menu_button1%></td>
+                            <td><%=company_info_list[i].menu_button2%></td>
+                            <td><%=company_info_list[i].footer_description%></td>
+                            <td><%=company_info_list[i].footer_address%></td>
+                            <td><%=company_info_list[i].footer_phone%></td>
+                            <td><%=company_info_list[i].footer_email%></td>
+                            <td><%=company_info_list[i].footer_map%></td>
+
+                            <td>
+                                <img src="/company_info/<%=company_info_list[i].logo1%>" width="100px" height="100px" alt="logo1">
+                            </td>
+                            <td>
+                                <img src="/company_info/<%=company_info_list[i].logo2%>" width="100px" height="100px" alt="logo2">
+                            </td>
+     
+                        </tr>
+                    <% } %>
+            </table>
+        </div>
+    </div> 
+</div>
+
+
+<%-include("footer.ejs")%>

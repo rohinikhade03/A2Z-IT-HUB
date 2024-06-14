@@ -1,0 +1,191 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color:  black;
+    overflow-x: hidden;
+}
+/* Header started */
+.main_menu{
+    height: auto;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0px 0px 5px 5px rgb(234, 106, 106);
+    z-index: 999;
+    /* opacity: 0.8; */
+}
+.main_menu .menu_logo img{
+    height: 10vh;
+    margin: 10px;
+}
+.main_menu li{
+    text-shadow: 1px 1px red;
+    color: white;
+}
+.main_menu li:hover{
+    color: #d00000;
+}
+
+/* Header end */
+/* Footer Started */
+.footer{
+    height: auto;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0px 0px 5px 5px rgb(234, 106, 106);
+}
+.footer .footer_logo img{
+    height: 10vh;
+    margin: 10px;
+}
+.footer_links ul{
+    position: absolute;
+    left: 75vh;
+    padding: 2vh;
+}
+.footer_links i{
+    height: 6vh;
+    width: 6vh;
+    color: #d00000;
+    background-color: wheat;
+    text-align: center;
+    line-height: 6vh;
+    border-radius: 50%;
+}
+.footer_links i:hover{
+    color: #9d0208;
+    background-color: #ADCBE5;
+}
+@media (max-width:650px){
+    .footer_map iframe{
+        width: 90%;
+    }
+    .footer_links ul{
+        position: absolute;
+        left: 10vh;
+    }
+}
+
+/* Footer End */
+/* Slider started*/
+
+.Slider {
+    margin-top: -10vh;
+}
+.Slider .carousel-inner img{
+    height: 100vh;
+}
+.Slider .carousel-inner button{
+    height: 7vh;
+    width: 30vh;
+    background-color: #d00000;
+    color: whitesmoke;
+}
+.Slider .carousel-inner h5{
+    font-size: 10vmin;
+    text-shadow: 2px 2px rgb(224, 163, 163);
+}
+.Slider .carousel-inner p{
+    font-size: 10vmin;
+    text-shadow: 1px 1px rgb(224, 163, 163);
+}
+/* Slider end*/
+/* Home_part1 started */
+.home_part1 h1{
+    text-shadow: 1px 1px red;
+}
+/* Home_part1 end */
+/* Home_part2 started */
+.home_part2 .program-cards .card img{
+    margin-left: 15vh;
+    height: 7vh;
+    width: 10vh;
+}
+.home_part2 .program-cards{
+    margin-left: 15vh;
+}
+.home_part2 .programs .programs_designed div{
+    height: 25vh;
+    background-color: #e2eafc;
+}
+@media (max-width:650px){
+    .home_part2 .program-cards{
+        margin-left: 0px;
+        width: 80%;
+    }
+    
+}
+/* Home_part2 end */
+/* About started */
+    .values .core_values div{
+        /* border-bottom: 3px solid wheat;
+        border-left: 3px solid wheat; */
+        box-shadow: 0px 5px 5px 0px red;
+    }
+/* About end */
+/* Services started */
+.partners div{
+    background-color: #e2eafc;
+}
+@media (max-width:650px){
+   .partners .card{
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    .services div{
+        width: 80%;
+    }
+}
+/* Services end */
+/* main_banner */
+.main_banner img{
+    height: 90vh;
+    width: 100%;
+}
+/* Banner End */
+/* Placement Started */
+.main_placement .career .icon{
+    height: 13vh;
+    width: 13vh;
+    background-color: #f07167 ;
+    border-radius: 50%;
+    line-height: 13vh;
+    font-size: 7vh;
+}
+.main_placement .career p{
+    line-height: 5vh;
+    font-size: 3vh;
+}
+.main_placement .companies .company{
+    height: 22vh;
+    width: 22vh;
+}
+.main_placement .companies .company img{
+    height: 20vh;
+    width: 20vh;
+}
+.main_placement .companies .company img:hover{
+    transform: scale(0.8);
+}
+/* Placement End */
+/* All */
+li,p{
+    color: white;
+}
+.card p{
+    color: black;
+}
+h2,h5{
+    color: red;
+    text-shadow: 1px 1px white;
+}
+h3{
+    text-shadow: 1px 1px red;
+}
+.card:hover{
+    background-color: #ADCBE5;
+}
+.programs .programs_designed .card:hover{
+    background-color: #ADCBE5;
+}
